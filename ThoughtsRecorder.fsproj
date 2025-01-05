@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="whisper.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Compile Include="kitchen.fsx" />
+    <Compile Include="Paths.fs" />
+    <Compile Include="Audio.fs" />
+    <Compile Include="Model.fs" />
+    <Compile Include="View.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AsciiChart.Sharp" Version="1.0.3" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="Terminal.Gui.Elmish" Version="2.2.1145" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="whisperlite.net">
+      <HintPath>..\whisperlite.net\bin\Release\netstandard2.1\whisperlite.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
